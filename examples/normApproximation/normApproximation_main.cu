@@ -293,20 +293,20 @@ float test_normMin_cuda(int size, int lowerBound) {
 
 int main(int argc, char* argv[]) {
   // here we have some problems
-  std::cout << "problem size: 10, constrained, CPU, single precision" << std::endl;
+  std::cout << "problem size: 1000, constrained, CPU, single precision" << std::endl;
   float min_f_cpu_sgl = test_normMin_cpu<float>(1000, 1);
   std::cout << "CPU result " << min_f_cpu_sgl << std::endl << std::endl;
 
-  std::cout << "problem size: 10, constrained, GPU, single precision" << std::endl;
+  std::cout << "problem size: 1000, constrained, GPU, single precision" << std::endl;
   float min_f_gpu_sgl = test_normMin_cuda(1000, 1);
   std::cout << "GPU result " << min_f_gpu_sgl << std::endl;
 
   // removing the bounds "solves" this problem
-  std::cout << "problem size: 10, unconstrained, CPU, single precision" << std::endl;
+  std::cout << "problem size: 1000, unconstrained, CPU, single precision" << std::endl;
   min_f_cpu_sgl = test_normMin_cpu<float>(1000, 0);
   std::cout << "CPU result " << min_f_cpu_sgl << std::endl << std::endl;
 
-  std::cout << "problem size: 10, unconstrained, GPU, single precision" << std::endl;
+  std::cout << "problem size: 1000, unconstrained, GPU, single precision" << std::endl;
   min_f_gpu_sgl = test_normMin_cuda(1000, 0);
   std::cout << "GPU result " << min_f_gpu_sgl << std::endl;
 
